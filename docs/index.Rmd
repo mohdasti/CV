@@ -1,0 +1,298 @@
+---
+title: "Mohammad Dastgheib's CV"
+author: Mohammad Dastgheib
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: false
+output:
+  pagedown::html_resume:
+    css: [ 'dd_cv.css', 'custom.css','resume']
+    self_contained: true
+#knit: pagedown::chrome_print      
+---
+
+<!-- start academic icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- end academic icons -->
+
+ 
+<!-- start font awesome -->
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+
+ 
+<!-- end font awesome -->
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis',
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1cd9WEiRfwZzXdfqeXzTPMvkqhUl70aVlTJFjQIDtPK4/edit?usp=sharing",  
+  pdf_mode = params$pdf_mode
+)
+
+
+
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
+
+
+
+```
+
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+```{css, echo=FALSE}
+.aside {
+  padding-top: 0;
+}
+
+.aside > p:first-of-type {
+  margin-top: 0;
+}
+```
+
+Aside
+================================================================================
+
+<!-- ![Mohammad Dastgheib](avatarmd.png) 
+
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at https://mohdasti.github.io/resume/")
+} else {
+  cat("<i class='fas fa-download'></i> [Download this resume in PDF](https://mohdasti.github.io/resume/index.pdf).")
+}
+```
+-->
+CONTACT
+--------------------------------------------------------------------------------
+- <i class="fa fa-home"></i> [mdastgheib.com](https://mdastgheib.com)
+
+- <i class="fa fa-envelope"></i> mdast003@ucr.edu
+
+- <i class="fa fa-twitter"></i> [Twitter: `@`MoDastgheib](https://twitter.com/MoDastgheib)
+
+- <i class="fa fa-linkedin"></i> [Linkedin: mdastgheib](https://www.linkedin.com/in/mdastgheib/)
+
+- <i class="fa fa-github"></i> [GitHub: mohdasti](https://github.com/mohdasti)
+
+<!-- - <i class="fa fa-skype"></i> [Skype: mohdasti](https://join.skype.com/invite/skIYsgabZb9) -->
+
+```{r echo=FALSE, out.width="7%"}
+knitr::include_graphics("img/zoom.png")
+```
+ [Zoom: mdastgheib](https://ucr.zoom.us/my/mdastgheib)
+ 
+<!-- - <i class="fas fa-phone-square-alt"></i> +1 647-719-5552 -->
+
+
+Programming Skills {#skills}
+--------------------------------------------------------------------------------
+
+Experienced with:
+
+<i class="fab fa-r-project"></i> `R`
+
+<i class="fab fa-markdown"></i> `Markdown`
+
+
+Familiar with:
+
+<i class="fab fa-python"></i> `Python`
+
+<i class="fas fa-code-branch"></i> `Git`
+
+<i class="fas fa-database"></i> `SQL`
+
+```{r echo=FALSE, out.width="7%"}
+knitr::include_graphics("img/matlab.png")
+```
+ `MATLAB-SPM12`
+ 
+```{r echo=FALSE, out.width="7%"}
+knitr::include_graphics("img/latex.png")
+```
+ `LaTeX`
+
+ Languages
+--------------------------------------------------------------------------------
+
+**Persian:** Native
+
+**English:** Proficient
+
+**French:** Beginner
+ 
+ Nationality
+--------------------------------------------------------------------------------
+
+**Canadian**
+
+**Iranian**
+
+
+Main
+================================================================================
+
+Mohammad Dastgheib {#title}
+--------------------------------------------------------------------------------
+
+I am a cognitive neuroscientist, with a background in human memory consolidation. My research interests include learning and perceptual memory in older adults as well as its applications in early detection of neurodegenerative disorders.
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```
+
+Work {data-icon=briefcase data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('work_experience')
+```
+
+Academic Experience {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('academic_experience')
+```
+
+
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+
+```{r}
+CV %<>% print_section('teaching_positions')
+```
+
+
+Research Experience {data-icon=bar-chart}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('research_experience')
+```
+
+
+Publication {data-icon=book}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block('publication_aside')
+```
+:::
+
+```{r}
+CV %<>% print_section('publications')
+```
+
+
+Conference Talk  {data-icon=comments}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('conference_talks')
+```
+
+
+<br>
+<br>
+
+
+Poster Presentations {data-icon=image}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('poster')
+```
+
+
+
+Community Involvement {data-icon=handshake}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('community_involvement')
+```
+
+
+
+Honours & Awards {data-icon=medal}
+--------------------------------------------------------------------------------
+
+<!---::: aside
+```{r}
+CV %<>% print_text_block('teaching_experience_aside')
+```
+:::
+--->
+```{r}
+CV %<>% print_section('honours_awards')
+```
+
+
+Affiliations & Memberships {data-icon=group}
+--------------------------------------------------------------------------------
+
+<!--- ::: aside
+```{r}
+CV %<>% print_text_block('teaching_experience_aside')
+```
+:::
+--->
+```{r}
+CV %<>% print_section('affiliations_memberships')
+```
+
+Short Online Courses Attended {data-icon=list}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block('course_attended_aside')
+```
+:::
+
+```{r}
+CV %<>% print_section('course_attended')
+```
+
+
+:::aside
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+This CV was made with the R package [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/index.html).
+
+Code available on <i class="fa fa-github"></i>  [GitHub](https://github.com/mohdasti/CV). 
+
+Last updated on `r Sys.Date()`. The most recent version of this CV is [available here](https://github.com/mohdasti/CV/blob/main/docs/index.pdf). 
+:::
+
+
+
