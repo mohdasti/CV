@@ -272,12 +272,13 @@ CV %<>% print_section('affiliations_memberships')
 Short Online Courses Attended {data-icon=list}
 --------------------------------------------------------------------------------
 
+<!-- 
 ::: aside
 ```{r}
 CV %<>% print_text_block('course_attended_aside')
 ```
 :::
-
+--->
 ```{r}
 CV %<>% print_section('course_attended')
 ```
