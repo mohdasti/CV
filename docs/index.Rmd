@@ -126,7 +126,7 @@ Familiar with:
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/matlab.png")
 ```
- `MATLAB-SPM12`
+ `MATLAB`
  
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/latex.png")
