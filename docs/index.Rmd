@@ -112,8 +112,10 @@ Experienced with:
 
 <i class="fab fa-r-project"></i> `R`
 
-<i class="fab fa-markdown"></i> `Markdown`
-
+```{r echo=FALSE, out.width="7%"}
+knitr::include_graphics("img/matlab.png")
+```
+ `MATLAB`
 
 Familiar with:
 
@@ -123,11 +125,8 @@ Familiar with:
 
 <i class="fas fa-database"></i> `SQL`
 
-```{r echo=FALSE, out.width="7%"}
-knitr::include_graphics("img/matlab.png")
-```
- `MATLAB`
- 
+<i class="fab fa-markdown"></i> `Markdown`
+
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/latex.png")
 ```
@@ -200,12 +199,13 @@ CV %<>% print_section('research_experience')
 
 Publication {data-icon=book}
 --------------------------------------------------------------------------------
-
+<!--
 ::: aside
 ```{r}
 CV %<>% print_text_block('publication_aside')
 ```
 :::
+-->
 
 ```{r}
 CV %<>% print_section('publications')
