@@ -8,21 +8,22 @@ params:
 output:
   pagedown::html_resume:
     css: [ 'dd_cv.css', 'custom.css','resume']
-    self_contained: true
+    standalone: true
+    embed-resources: true
+    
 #knit: pagedown::chrome_print      
 ---
 
 <!-- start academic icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-<!-- end academic icons -->
 
- 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> <!-- end academic icons -->
+
 <!-- start font awesome -->
+
+```{=html}
 <script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
-
- 
+```
 <!-- end font awesome -->
-
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
@@ -47,7 +48,6 @@ CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
 
 ```
 
-
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
 if(params$pdf_mode) {
@@ -70,9 +70,9 @@ if(params$pdf_mode) {
 }
 ```
 
-Aside
-================================================================================
+# Aside
 
+````{=html}
 <!-- ![Mohammad Dastgheib](avatarmd.png) 
 
 ```{r}
@@ -83,30 +83,31 @@ if(params$pdf_mode){
 }
 ```
 -->
-CONTACT
---------------------------------------------------------------------------------
-- <i class="fa fa-home"></i> [mdastgheib.com](https://mdastgheib.com)
+````
 
-- <i class="fa fa-envelope"></i> mdast003@ucr.edu
+## CONTACT
 
-- <i class="fa fa-twitter"></i> [Twitter: `@`MoDastgheib](https://twitter.com/MoDastgheib)
+-   <i class="fa fa-home"></i> [mdastgheib.com](https://mdastgheib.com)
 
-- <i class="fa fa-linkedin"></i> [Linkedin: mdastgheib](https://www.linkedin.com/in/mdastgheib/)
+-   <i class="fa fa-envelope"></i> [mdast003\@ucr.edu](mailto:mdast003@ucr.edu){.email}
 
-- <i class="fa fa-github"></i> [GitHub: mohdasti](https://github.com/mohdasti)
+-   <i class="fa fa-twitter"></i> [Twitter: `@`MoDastgheib](https://twitter.com/MoDastgheib)
+
+-   <i class="fa fa-linkedin"></i> [Linkedin: mdastgheib](https://www.linkedin.com/in/mdastgheib/)
+
+-   <i class="fa fa-github"></i> [GitHub: mohdasti](https://github.com/mohdasti)
 
 <!-- - <i class="fa fa-skype"></i> [Skype: mohdasti](https://join.skype.com/invite/skIYsgabZb9) -->
 
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/zoom.png")
 ```
- [Zoom: mdastgheib](https://ucr.zoom.us/my/mdastgheib)
- 
+
+[Zoom: mdastgheib](https://ucr.zoom.us/my/mdastgheib)
+
 <!-- - <i class="fas fa-phone-square-alt"></i> +1 647-719-5552 -->
 
-
-Programming Skills {#skills}
---------------------------------------------------------------------------------
+## Programming Skills {#skills}
 
 Experienced with:
 
@@ -115,7 +116,8 @@ Experienced with:
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/matlab.png")
 ```
- `MATLAB`
+
+`MATLAB`
 
 Familiar with:
 
@@ -130,75 +132,62 @@ Familiar with:
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/latex.png")
 ```
- `LaTeX`
 
- Languages
---------------------------------------------------------------------------------
+`LaTeX`
+
+## Languages
 
 **Persian:** Native
 
 **English:** Proficient
 
 **French:** Beginner
- 
- Nationality
---------------------------------------------------------------------------------
+
+## Nationality
 
 **Canadian**
 
 **Iranian**
 
+# Main
 
-Main
-================================================================================
-
-Mohammad Dastgheib {#title}
---------------------------------------------------------------------------------
+## Mohammad Dastgheib {#title}
 
 I am a cognitive neuroscientist, with a background in human memory consolidation. My research interests include learning and perceptual memory in older adults as well as its applications in early detection of neurodegenerative disorders.
 
-
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
+## Education {data-icon="graduation-cap" data-concise="true"}
 
 ```{r}
 CV %<>% print_section('education')
 ```
 
-Work {data-icon=briefcase data-concise=true}
---------------------------------------------------------------------------------
+## Work {data-icon="briefcase" data-concise="true"}
 
 ```{r}
 CV %<>% print_section('work_experience')
 ```
 
-Academic Experience {data-icon=laptop}
---------------------------------------------------------------------------------
+## Academic Experience {data-icon="laptop"}
 
 ```{r}
 CV %<>% print_section('academic_experience')
 ```
 
-
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
+## Teaching Experience {data-icon="chalkboard-teacher"}
 
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```
 
-
-Research Experience {data-icon=bar-chart}
---------------------------------------------------------------------------------
+## Research Experience {data-icon="bar-chart"}
 
 ```{r}
 CV %<>% print_section('research_experience')
 ```
 
+## Publication {data-icon="book"}
 
-Publication {data-icon=book}
---------------------------------------------------------------------------------
+````{=html}
 <!--
 ::: aside
 ```{r}
@@ -206,72 +195,71 @@ CV %<>% print_text_block('publication_aside')
 ```
 :::
 -->
+````
 
 ```{r}
 CV %<>% print_section('publications')
 ```
 
-
-Conference Talk  {data-icon=comments}
---------------------------------------------------------------------------------
+## Conference Talk {data-icon="comments"}
 
 ```{r}
 CV %<>% print_section('conference_talks')
 ```
 
+<br> <br>
 
-<br>
-<br>
-
-
-Poster Presentations {data-icon=image}
---------------------------------------------------------------------------------
+## Poster Presentations {data-icon="image"}
 
 ```{r}
 CV %<>% print_section('poster')
 ```
 
+## Mentorship {data-icon="chalkboard-teacher"}
 
+```{r}
+CV %<>% print_section('mentorship')
+```
 
-Community Involvement {data-icon=handshake}
---------------------------------------------------------------------------------
+## Community Involvement {data-icon="handshake"}
 
 ```{r}
 CV %<>% print_section('community_involvement')
 ```
 
+## Honours & Awards {data-icon="medal"}
 
-
-Honours & Awards {data-icon=medal}
---------------------------------------------------------------------------------
-
+````{=html}
 <!---::: aside
 ```{r}
 CV %<>% print_text_block('teaching_experience_aside')
 ```
 :::
 --->
+````
+
 ```{r}
 CV %<>% print_section('honours_awards')
 ```
 
+## Affiliations & Memberships {data-icon="group"}
 
-Affiliations & Memberships {data-icon=group}
---------------------------------------------------------------------------------
-
+````{=html}
 <!--- ::: aside
 ```{r}
 CV %<>% print_text_block('teaching_experience_aside')
 ```
 :::
 --->
+````
+
 ```{r}
 CV %<>% print_section('affiliations_memberships')
 ```
 
-Short Online Courses Attended {data-icon=list}
---------------------------------------------------------------------------------
+## Short Online Courses Attended {data-icon="list"}
 
+````{=html}
 <!-- 
 ::: aside
 ```{r}
@@ -279,21 +267,18 @@ CV %<>% print_text_block('course_attended_aside')
 ```
 :::
 --->
+````
+
 ```{r}
 CV %<>% print_section('course_attended')
 ```
 
-
-:::aside
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
+::: aside
+## Disclaimer {#disclaimer}
 
 This CV was made with the R package [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/index.html).
 
-Code available on <i class="fa fa-github"></i>  [GitHub](https://github.com/mohdasti/CV). 
+Code available on <i class="fa fa-github"></i> [GitHub](https://github.com/mohdasti/CV).
 
-Last updated on `r Sys.Date()`. The most recent version of this CV is [available here](https://github.com/mohdasti/CV/blob/main/docs/index.pdf). 
+Last updated on `r Sys.Date()`. The most recent version of this CV is [available here](https://github.com/mohdasti/CV/blob/main/docs/index.pdf).
 :::
-
-
-
