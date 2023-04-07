@@ -97,7 +97,7 @@ if(params$pdf_mode){
 
 -   <i class="fa fa-github"></i> [GitHub: mohdasti](https://github.com/mohdasti)
 
-<!-- - <i class="fa fa-skype"></i> [Skype: mohdasti](https://join.skype.com/invite/skIYsgabZb9) -->
+<!-- - <i class="fa fa-skype"></i> [Skype: mohdasti](https://join.skype.com/invite/skIYsgabZb9) 
 
 ```{r echo=FALSE, out.width="7%"}
 knitr::include_graphics("img/zoom.png")
@@ -105,7 +105,7 @@ knitr::include_graphics("img/zoom.png")
 
 [Zoom: mdastgheib](https://ucr.zoom.us/my/mdastgheib)
 
-<!-- - <i class="fas fa-phone-square-alt"></i> +1 647-719-5552 -->
+- <i class="fas fa-phone-square-alt"></i> +1 647-719-5552 -->
 
 ## Programming Skills {#skills}
 
