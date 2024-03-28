@@ -113,10 +113,9 @@ Experienced with:
 
 <i class="fab fa-r-project"></i> `R`
 
-```{r echo=FALSE, out.width="7%"}
+```{r echo=FALSE, out.width="9%"}
 knitr::include_graphics("img/matlab.png")
 ```
-
 `MATLAB`
 
 Familiar with:
@@ -129,11 +128,14 @@ Familiar with:
 
 <i class="fab fa-markdown"></i> `Markdown`
 
-```{r echo=FALSE, out.width="7%"}
+```{r echo=FALSE, out.width="9%"}
 knitr::include_graphics("img/latex.png")
 ```
-
 `LaTeX`
+
+```{r echo=FALSE, out.width="40%"}
+knitr::include_graphics("img/GC.png")
+```
 
 ## Languages
 
